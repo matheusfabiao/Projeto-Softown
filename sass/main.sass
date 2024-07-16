@@ -1,0 +1,465 @@
+@font-face 
+    font-family: Tusker Grotesk
+    src: url('/assets/font/TuskerGrotesk-8700Bold.ttf')
+
+@font-face 
+    font-family: Bai Jamjuree Regular
+    src: url('/assets/font/BaiJamjuree-Regular.ttf')
+
+@font-face 
+    font-family: Bai Jamjuree Medium
+    src: url('/assets/font/BaiJamjuree-Medium.ttf')
+
+@font-face 
+    font-family: Bai Jamjuree Bold
+    src: url('/assets/font/BaiJamjuree-Bold.ttf')
+
+// mixins.scss
+@mixin mobile
+  @media (max-width: 480px)
+    @content
+  
+
+@mixin tablet
+  @media (max-width: 768px)
+    @content
+  
+
+@mixin notebook
+  @media (max-width: 992px)
+    @content
+
+
+@mixin desktop
+  @media (max-width: 1024px)
+    @content
+
+
+@mixin large-desktop
+  @media (max-width: 1200px)
+    @content
+
+
+@mixin flexbox($justify: flex-start, $align: stretch, $direction: row)
+    display: flex
+    justify-content: $justify
+    align-items: $align
+    flex-direction: $direction
+
+@mixin font($family, $size, $weight: normal, $style: normal)
+    font-family: $family
+    font-size: $size
+    font-weight: $weight
+    font-style: $style
+
+@mixin border-radius($radius)
+    -webkit-border-radius: $radius
+    -moz-border-radius: $radius
+    -ms-border-radius: $radius
+    -o-border-radius: $radius
+    border-radius: $radius
+
+@mixin transition($properties...)
+    -webkit-transition: $properties
+    -moz-transition: $properties
+    -ms-transition: $properties
+    -o-transition: $properties
+    transition: $properties
+
+@mixin box-shadow($shadow...)
+    -webkit-box-shadow: $shadow
+    -moz-box-shadow: $shadow
+    -ms-box-shadow: $shadow
+    -o-box-shadow: $shadow
+    box-shadow: $shadow
+
+@mixin text-shadow($shadows...)
+    -webkit-text-shadow: $shadows
+    -moz-text-shadow: $shadows
+    -ms-text-shadow: $shadows
+    -o-text-shadow: $shadows
+    text-shadow: $shadows
+
+// COLORS
+$primary: #1E201C
+$secondary: #FDFDFD
+$bg-color: #FDFDFD
+$blur: #ADADAD
+$text: #FDFDFD
+
+// FONTS
+$fs-xl: clamp(1.5rem, 8vw, 3.5rem)
+$fs-lg: clamp(1.25rem, 6vw, 3rem)
+$fs-md: clamp(1rem, 4vw, 2rem)
+$fs-sm: clamp(0.875rem, 2vw, 1.5rem)
+
+*
+    padding: 0
+    margin: 0
+    box-sizing: border-box
+    list-style: none
+    text-decoration: none
+
+html
+    scroll-behavior: smooth
+
+body
+    margin: 0
+    font-family: Bai Jamjuree Regular
+    min-height: 100dvh
+    background: $bg-color
+
+h1
+    font-size: 2em
+    margin-bottom: 10px
+
+h2
+    font-size: 1.5em
+    margin-top: 20px
+    margin-bottom: 10px
+
+
+p
+    font-size: 1.2em
+    line-height: 1.6
+
+a
+    color: $text
+
+#action-btn-container
+    display: flex
+    align-items: center
+    justify-content: center
+    gap: 1rem
+
+.action-btn
+    color: $primary
+    background: transparent
+    padding: 0.625rem 1.25rem
+    border: 1px solid $primary
+    @include border-radius(25px)
+    @include flexbox(center, center)
+    @include transition(0.3s)
+    font-size: 0.875em
+    font-weight: 700
+    gap: 0.3rem
+
+    &:hover
+        background: $primary
+        color: $secondary
+
+    #down-arrow
+        display: inline-block
+        @include transition(0.3s)
+
+    &:first-child:focus
+        #down-arrow
+            transform: rotate(-180deg)
+
+    #contact-arrow
+        display: inline-block
+        transform: rotate(-45deg)
+        transition: transform 0.3s ease
+
+    &:nth-child(2):hover
+        #contact-arrow
+            transform: rotate(0)
+
+    .contry-flag
+        max-width: 15px
+
+
+.bold-text
+    font-weight: 700
+
+.wrapper
+    width: 100%
+    margin: 0 auto
+    padding: 0 1.5rem
+    position: relative
+    background: $bg-color
+    @include transition(0.3s)
+
+    @include notebook
+        padding: 1rem
+
+.inner-wrapper
+    padding: 2rem
+    background-color: $blur
+    border-radius: 25px
+
+// HEADER
+#header
+    position: fixed
+    width: 100%
+    top: 0
+    left: 0
+    padding: 0 1.5rem
+    background: $bg-color
+    z-index: 999
+    @include transition(0.3s)
+
+    @include notebook
+        background: $primary
+
+    #navbar
+        width: 100%
+        height: 90px
+        margin: 0 auto
+        @include flexbox(space-between, center)
+        @include transition(0.3s)
+
+        &.scroll-down
+            height: 60px
+
+        .logo
+            @include flexbox(flex-start, center)
+            width: 33.33%
+            gap: 0.5rem
+
+            &-name
+                @include font(Bai Jamjuree Bold, 3rem)
+                color: $primary
+                cursor: pointer
+                @include transition(0.3s)
+
+                @include large-desktop
+                    font-size: 2rem                    
+
+                @include notebook
+                    color: $text
+
+                &.scroll-down
+                    opacity: 0
+                    cursor: default
+
+            &-img
+                max-width: 40px
+                cursor: pointer
+                @include transition(0.3s)
+
+                @include large-desktop
+                    max-width: 30px
+
+        #links
+            display: flex
+            gap: 2rem
+            width: 33.33%
+            justify-content: center
+
+            @include large-desktop
+                    gap: 1.5rem
+
+            @include notebook
+                display: none
+
+            .nav-item
+                @include font(Bai Jamjuree Medium, 1.5rem, 500)
+                text-transform: uppercase
+                color: $blur
+                @include transition(0.3s)
+
+                @include large-desktop
+                    font-size: 1.2rem
+
+                &:hover
+                    color: $primary
+
+                &.scroll-down
+                    font-size: 1.2rem
+
+        #action-btn-container
+            width: 33.33%
+            justify-content: flex-end
+            gap: 1rem
+            @include transition(0.3s)         
+            
+            @include large-desktop
+                gap: 0.5rem
+
+            @include notebook
+                display: none
+        
+        #toggle-btn
+            color: $text
+            font-size: 2rem
+            cursor: pointer
+            display: none
+
+            @include notebook
+                display: block
+
+    .mobile-menu
+        display: none
+        position: absolute
+        top: 100%
+        right: 0
+        width: 100%
+        height: 0
+        background: $primary
+        overflow: hidden
+        @include transition(height 0.3s ease)        
+
+        @include notebook
+            @include flexbox(center, center, column)
+
+        li
+            padding: 1.5rem
+            text-transform: uppercase
+            @include flexbox(center, center)
+
+            #action-btn-container
+                .action-btn
+                    color: $primary
+                    background: $secondary
+                    width: 120px
+
+                    &:hover
+                        background: darken($secondary, 15%)
+
+    .mobile-menu.open
+        height: calc( 100dvh - 90px )
+        @include transition(height 0.3s ease)
+        
+            
+
+
+// HERO
+#main
+    padding-top: 90px
+    .wrapper
+        #hero
+            position: relative
+            height: calc( 100dvh - 90px )
+            overflow: hidden
+            @include border-radius(25px)
+            @include transition(0.3s)
+            
+
+            @include notebook
+                height: calc( 100dvh - 122px )
+
+            #hero-video
+                position: absolute
+                top: 0
+                left: 0
+                width: 100%
+                height: 100%
+                object-fit: cover
+                @include border-radius(25px)
+                filter: brightness(50%)
+
+            .hero-content
+                position: relative
+                z-index: 1
+                @include flexbox(center, center, column)
+                height: 100%
+                color: $text
+                text-align: center
+                padding: 1.5rem
+                @include text-shadow(2px 2px 4px rgba(0, 0, 0, 0.5))
+
+                #hero-logo
+                    min-height: 100px
+                    margin-bottom: 2rem
+                    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5))
+
+                h1
+                    @include font(Tusker Grotesk, $fs-xl, bold)
+                    margin-bottom: 1rem
+
+                p
+                    @include font(Bai Jamjuree Regular, $fs-sm)
+                    margin-bottom: 2rem
+                    max-width: 900px
+
+                .action-btn
+                    color: $primary
+                    background: $secondary
+                    @include border-radius(25px)
+                    padding: 0.625rem 1.25rem
+                    @include transition(0.3s)
+                    text-transform: uppercase
+                    font-weight: 700
+                    @include box-shadow(2px 2px 4px rgba(0, 0, 0, 0.5))
+
+                    &:hover
+                        background: darken($secondary, 15%)
+
+        #cards-section
+            display: flex
+            flex-wrap: wrap
+            width: 100%
+            margin-top: 1.5rem
+            gap: 1rem
+
+            .card
+                background-size: cover
+                background-position: center
+                height: 100vh
+                width: calc(33.333% - 0.67rem)
+                @include border-radius(25px)
+                padding: 1.5rem
+                @include box-shadow(0 4px 6px rgba(0, 0, 0, 0.1))
+                @include flexbox(flex-end, flex-end)                
+                position: relative
+                color: $secondary
+                @include transition(0.3s)
+
+                &.card-1
+                    background-image: url('/assets/img/image1.jpg')
+
+                &.card-2
+                    background-image: url('/assets/img/image2.jpg')
+
+                &.card-3
+                    background-image: url('/assets/img/image3.jpg')
+
+                &.card-4
+                    background-image: url('/assets/img/image1.jpg')
+
+                &.card-5
+                    background-image: url('/assets/img/image2.jpg')
+
+                &.card-6
+                    background-image: url('/assets/img/image3.jpg')
+
+                .card-content
+                    @include flexbox($direction: column)                    
+                    text-align: left
+                    position: absolute
+                    bottom: 1.5rem
+                    left: 1.5rem
+                    @include transition(0.3s)
+                    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.5))
+
+                    h2
+                        @include font(Bai Jamjuree Bold, 2em)
+                        margin-bottom: 1rem
+
+                    .action-btn
+                        opacity: 0
+                        transform: translateY(10px)
+                        @include transition(0.3s)
+                        color: $primary
+                        background: $secondary
+                        padding: 0.625rem 1.25rem
+                        border: 1px solid $secondary
+                        text-transform: uppercase
+                        font-weight: 700
+
+                        &:hover
+                            background: $primary
+                            color: $secondary
+
+            @include notebook
+                flex-direction: column
+                align-items: center
+
+                .card
+                    width: 100%
+                    height: 50dvh
+                    margin-bottom: 1rem
+
+                .card:last-child
+                    margin-bottom: 0
