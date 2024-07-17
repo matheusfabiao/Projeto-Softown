@@ -550,5 +550,26 @@ a {
     margin-bottom: 0;
   }
 }
+#main .wrapper #breathing-area {
+  max-width: 1200px;
+  padding: 0 3rem;
+  margin: 5rem auto;
+  text-align: center;
+  font-family: Bai Jamjuree Regular;
+  font-size: clamp(0.875rem, 2vw, 1.5rem);
+  font-weight: normal;
+  font-style: normal;
+}
+@media (max-width: 480px) {
+  #main .wrapper #breathing-area {
+    padding: 0;
+  }
+}
+#main .wrapper #breathing-area h2 {
+  font-family: Tusker Grotesk;
+  font-size: clamp(1.25rem, 6vw, 3rem);
+  font-weight: 700;
+  font-style: normal;
+}
 
 /*# sourceMappingURL=main.css.map */
