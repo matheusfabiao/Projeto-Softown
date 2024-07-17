@@ -66,11 +66,13 @@ window.addEventListener('load', ()=>{
     let loaderContainer = document.querySelector('.preloader-container')
     let pageContent = document.querySelector('.content')
     if(loaderContainer) {
-        pageContent.style.display = 'block'
-        loaderContainer.style.opacity = 0
         setTimeout(()=>{
-            loaderContainer.style.display = 'none'
-        }, 500)
+            pageContent.style.display = 'block'
+            loaderContainer.style.opacity = 0
+            setTimeout(()=>{
+                loaderContainer.style.display = 'none'
+            }, 500)
+        }, 1000)
     }
 })
 
