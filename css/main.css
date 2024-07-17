@@ -403,7 +403,7 @@ a {
 }
 #main .wrapper #hero .hero-content h1 {
   font-family: Tusker Grotesk;
-  font-size: clamp(1.5rem, 8vw, 3.5rem);
+  font-size: clamp(1.25rem, 6vw, 3rem);
   font-weight: bold;
   font-style: normal;
   margin-bottom: 1rem;

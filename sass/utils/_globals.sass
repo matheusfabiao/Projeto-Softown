@@ -1,3 +1,6 @@
+@use 'variables'
+@use 'mixins'
+
 *
     padding: 0
     margin: 0
@@ -5,10 +8,14 @@
     list-style: none
     text-decoration: none
 
+html
+    scroll-behavior: smooth
+
 body
     margin: 0
     font-family: Bai Jamjuree Regular
     min-height: 100dvh
+    background: variables.$bg-color
 
 h1
     font-size: 2em
@@ -19,11 +26,54 @@ h2
     margin-top: 20px
     margin-bottom: 10px
 
-
 p
     font-size: 1.2em
     line-height: 1.6
 
+a
+    color: variables.$text
+
+#action-btn-container
+    display: flex
+    align-items: center
+    justify-content: center
+    gap: 1rem
+
+.action-btn
+    color: variables.$primary
+    background: transparent
+    padding: 0.625rem 1.25rem
+    border: 1px solid variables.$primary
+    @include mixins.border-radius(25px)
+    @include mixins.flexbox(center, center)
+    @include mixins.transition(0.3s)
+    font-size: 0.875em
+    font-weight: 700
+    gap: 0.3rem
+
+    &:hover
+        background: variables.$primary
+        color: variables.$secondary
+
+    #down-arrow
+        display: inline-block
+        @include mixins.transition(0.3s)
+
+    &:first-child:focus
+        #down-arrow
+            transform: rotate(-180deg)
+
+    #contact-arrow
+        display: inline-block
+        transform: rotate(-45deg)
+        transition: transform 0.3s ease
+
+    &:nth-child(2):hover
+        #contact-arrow
+            transform: rotate(0)
+
+    .contry-flag
+        max-width: 15px
 
 .bold-text
     font-weight: 700
@@ -31,10 +81,15 @@ p
 .wrapper
     width: 100%
     margin: 0 auto
-    padding: 1rem
-    background: $bg-color
+    padding: 0 1.5rem
+    position: relative
+    background: variables.$bg-color
+    @include mixins.transition(0.3s)
+
+    @include mixins.notebook
+        padding: 1rem
 
 .inner-wrapper
     padding: 2rem
-    background: $blur
+    background-color: variables.$blur
     border-radius: 25px

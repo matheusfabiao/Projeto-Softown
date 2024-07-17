@@ -1,0 +1,59 @@
+@mixin mobile
+  @media (max-width: 480px)
+    @content
+
+@mixin tablet
+  @media (max-width: 768px)
+    @content
+
+@mixin notebook
+  @media (max-width: 992px)
+    @content
+
+@mixin desktop
+  @media (max-width: 1024px)
+    @content
+
+@mixin large-desktop
+  @media (max-width: 1200px)
+    @content
+
+@mixin flexbox($justify: flex-start, $align: stretch, $direction: row)
+    display: flex
+    justify-content: $justify
+    align-items: $align
+    flex-direction: $direction
+
+@mixin font($family, $size, $weight: normal, $style: normal)
+    font-family: $family
+    font-size: $size
+    font-weight: $weight
+    font-style: $style
+
+@mixin border-radius($radius)
+    -webkit-border-radius: $radius
+    -moz-border-radius: $radius
+    -ms-border-radius: $radius
+    -o-border-radius: $radius
+    border-radius: $radius
+
+@mixin transition($properties...)
+    -webkit-transition: $properties
+    -moz-transition: $properties
+    -ms-transition: $properties
+    -o-transition: $properties
+    transition: $properties
+
+@mixin box-shadow($shadow...)
+    -webkit-box-shadow: $shadow
+    -moz-box-shadow: $shadow
+    -ms-box-shadow: $shadow
+    -o-box-shadow: $shadow
+    box-shadow: $shadow
+
+@mixin text-shadow($shadows...)
+    -webkit-text-shadow: $shadows
+    -moz-text-shadow: $shadows
+    -ms-text-shadow: $shadows
+    -o-text-shadow: $shadows
+    text-shadow: $shadows
