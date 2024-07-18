@@ -1,0 +1,15 @@
+@use '../utils/mixins'
+@use '../utils/variables'
+    
+.card
+    background-size: cover
+    background-position: center
+    height: 100vh
+    width: calc(33.333% - 0.67rem)
+    @include mixins.border-radius(25px)
+    padding: 1.5rem
+    @include mixins.box-shadow(0 4px 6px rgba(0, 0, 0, 0.1))
+    @include mixins.flexbox(flex-end, flex-end)                
+    position: relative
+    color: variables.$secondary
+    @include mixins.transition(0.3s)

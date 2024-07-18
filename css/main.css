@@ -487,34 +487,6 @@ a {
   margin-top: 1.5rem;
   gap: 1rem;
 }
-#main .wrapper #cards-section .card {
-  background-size: cover;
-  background-position: center;
-  height: 100vh;
-  width: calc(33.333% - 0.67rem);
-  -webkit-border-radius: 25px;
-  -moz-border-radius: 25px;
-  -ms-border-radius: 25px;
-  -o-border-radius: 25px;
-  border-radius: 25px;
-  padding: 1.5rem;
-  -webkit-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  -moz-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  -ms-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  -o-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
-  flex-direction: row;
-  position: relative;
-  color: #FDFDFD;
-  -webkit-transition: 0.3s;
-  -moz-transition: 0.3s;
-  -ms-transition: 0.3s;
-  -o-transition: 0.3s;
-  transition: 0.3s;
-}
 #main .wrapper #cards-section .card.card-1 {
   background-image: url("/assets/img/image1.jpg");
 }

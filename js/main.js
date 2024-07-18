@@ -1,3 +1,4 @@
+// VARIABLES
 const toggleBtn = document.getElementById('toggle-btn')
 const toggleBtnIcon = document.querySelector('#toggle-btn i')
 const mobileMenu = document.querySelector('.mobile-menu')
@@ -7,6 +8,7 @@ const logoName = document.querySelector('.logo-name')
 
 const scrollDownItens = [navBar, ...navItem, logoName]
 
+// MOBILE MENU
 toggleBtn.onclick = ()=> {
     mobileMenu.classList.toggle('open')
     const isOpen = mobileMenu.classList.contains('open')
@@ -27,6 +29,7 @@ toggleBtn.onclick = ()=> {
     }
 }
 
+// CARD HOVER EFFECT
 document.addEventListener('DOMContentLoaded', () => {
     const cards = document.querySelectorAll('.card')
 
@@ -45,6 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
     })
 })
 
+// HEADER SCROLLDOWN
 window.addEventListener('scroll', ()=>{
     scrollDownItens.map((element)=>{
         element.classList.toggle('scroll-down', window.scrollY > 0)
@@ -75,9 +79,3 @@ window.addEventListener('load', ()=>{
         }, 1000)
     }
 })
-
-
-// function loading() {
-//     document.getElementsByClassName('preloader-container')[0].style.display = 'none'
-//     document.getElementsByClassName('content')[0].style.display = 'block'
-// }
