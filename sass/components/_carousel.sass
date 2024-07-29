@@ -34,7 +34,7 @@
       align-items: center
       justify-content: flex-end // Alinhar o texto na parte inferior //
       padding: 20px
-      min-height: 50vh // Altura mínima padrão //
+      min-height: 70vh // Altura mínima padrão //
       background-size: cover
       background-position: center
       border-radius: 10px
@@ -58,24 +58,28 @@
       &:nth-child(5)
         background-image: url('https://tgtresultados.com.br/wp-content/uploads/2024/06/TGT-Resultados-Palestra.jpeg')      
 
-      .item::before
+      &::before
         content: ''
         position: absolute
         top: 0
         left: 0
         width: 100%
         height: 100%
-        background: linear-gradient(to top, rgba(0, 0, 0, 1), transparent)
+        background: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.1))
         z-index: 1 // Certifica-se de que o gradiente esteja acima da imagem de fundo //
       
 
-      .item h4
+      h4
         position: relative
         z-index: 2 // Certifica-se de que o texto esteja acima do gradiente //
         margin-top: 10px
         font-size: 1.2em
-      
+        @include mixins.transition(0.3s)
+        font-size: variables.$fs-md
 
-      .item:hover
-        transform: scale(1.05) // Efeito de zoom ao passar o mouse //
+        @media screen and ( max-width: 600px )
+          font-size: variables.$fs-xl    
+
+      &:hover h4
+        transform: translateY(-2.1rem) // Efeito de zoom ao passar o mouse //
       
