@@ -10,6 +10,9 @@
     <link rel="stylesheet" href="/css/main.css">
     <!-- FONT AWESOME CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- OWL CAROUSEL CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
 </head>
 <body>
     <!-- PRELOADER -->
@@ -23,7 +26,7 @@
         <header id="header">
             <div id="navbar">
                 <div class="logo">
-                    <img src="/assets/img/symbol-softown.webp" alt="Logo Softown" class="logo-img">
+                    <img src="/assets/img/Softown-Symbol.png" alt="Logo Softown" class="logo-img">
                     <span class="logo-name">Softown</span>
                 </div>
                 <ul id="links">
@@ -65,7 +68,7 @@
                         Your browser does not support the video tag.
                     </video>
                     <div class="hero-content">
-                        <img src="/assets/img/symbol-softown.webp" alt="Logo Softown" id="hero-logo">
+                        <img src="/assets/img/Softown-Symbol.png" alt="Logo Softown" id="hero-logo">
                         <h1>BEM-VINDO AO FUTURO</h1>
                         <p>Desafiamos normas e criamos novas oportunidades para empreendedores e empresas alcançarem seu <strong>máximo potencial</strong>.</p>
                     </div>
@@ -109,25 +112,74 @@
                         </div>
                     </div>
                 </section>
+
                 <!-- BREATHING AREA -->
-                <section id="breathing-area">
+                <section class="breathing-area">
                     <h2>Por que você faz o que faz?</h2>
                     <p><strong>Questionar o Status Quo é a nossa essência.</strong> O Softown é a casa da nova economia. Aqui, você encontra um ambiente que valoriza a confiança, a seriedade e a busca por um equilíbrio entre lucro e impacto positivo. Não aceitamos projetos sem propósito; buscamos autenticidade e transformação.</p>
                 </section>
 
-                <!-- CAROUSEL SECTION -->
+                <section class="carousel-section">
+                    <div class="carousel-header">
+                        <h2>O que está rolando por aqui?</h2>
+                        <a href="#" class="action-btn">Ver tudo</a>
+                    </div>
+                    <div class="owl-carousel owl-theme">
+                        <div class="item">
+                            <h4>Produto 1</h4>
+                          </div>
+                          <div class="item">
+                            <h4>Produto 2</h4>
+                          </div>
+                          <div class="item">
+                            <h4>Produto 3</h4>
+                          </div>
+                          <div class="item">
+                            <h4>Produto 4</h4>
+                          </div>
+                          <div class="item">
+                            <h4>Produto 5</h4>
+                          </div>
+                    </div>                    
+                </section>
 
                 <!-- BREATHING AREA -->
-                <section id="breathing-area">
+                <section class="breathing-area">
                     <h2>Junte-se à revolução</h2>
-                    <p>Está pronto para romper com o convencional e explorar novas possibilidades? Aqui, proporcionamos um ambiente onde o conhecimento e o crescimento se encontram para transformar vidas e criar novas oportunidades. No Softown, não apenas imaginamos o futuro — <strong>nós o construímos.</strong></p>
+                    <p>Está pronto para romper com o convencional e explorar novas oportunidades? Somos um <strong>Refúgio de Produtividade e Conforto</strong>, com coquetéis, culinária e muita cultura empreendedora.</p>
                 </section>
+
+                <footer class="footer" id="footer">
+                    <div class="logo">
+                        <img src="/assets/img/Softown-Symbol.png" alt="Logo Softown" class="logo-img">
+                    </div>
+                    <div class="footer-info">
+                        <div class="footer-adress">
+                            <p>SOF Sul Quadra 10 Conjunto B Lotes 6/8</p>
+                            <p>Brasília, DF. CEP: 71.215-252</p>
+                        </div>
+                        <p class="footer-contact"><span class="smaller-text">+55 61</span> 99955-4406<br>contato@sof.town</p>
+                        <div class="footer-social">
+                            <a href="#footer">Instagram</a>
+                            <a href="#footer">X</a>
+                            <a href="#footer">Linkedin</a>
+                        </div>
+                        <div class="footer-copyright">
+                            <p>&copy; Copyright 2024 - SOFTOWN</p>
+                            <p>Site desenvolvido por: <a href="https://www.aretangulo.com/" target="_blank">Retângulo</a></p>
+                        </div>
+                    </div>
+                </footer>
             </div>
         </main>
      </div>
        
-    
+    <!-- JQuery CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- OWL CAROUSEL JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <!-- MAIN JS FILE -->
     <script src="/js/main.js"></script>
+    
 </body>
 </html>

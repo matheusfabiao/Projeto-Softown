@@ -1,0 +1,81 @@
+@use '../utils/mixins'
+@use '../utils/variables'
+
+.carousel-section
+  width: 100%
+  border-radius: 25px
+  min-height: calc( 100dvh - 60px )
+  @include mixins.flexbox(space-evenly, center, column)
+  background: variables.$primary
+  color: variables.$text
+  padding: 0 10px
+
+  .carousel-header
+    // padding: 10px
+    width: 100%
+    @include mixins.flexbox(space-between, center)
+
+    h2
+      @include mixins.font(Tusker Grotesk, variables.$fs-lg)
+
+    .action-btn
+      color: variables.$text
+      border-color: variables.$text
+
+      &:hover
+        background: variables.$text
+        color: variables.$primary
+
+  .owl-carousel
+    .item
+      position: relative
+      display: flex
+      flex-direction: column
+      align-items: center
+      justify-content: flex-end // Alinhar o texto na parte inferior //
+      padding: 20px
+      min-height: 50vh // Altura mínima padrão //
+      background-size: cover
+      background-position: center
+      border-radius: 10px
+      @include mixins.box-shadow(0 4px 8px rgba(0,0,0,0.1))
+      text-align: center
+      color: white
+      overflow: hidden
+      transition: transform 0.3s ease-in-out
+
+      &:nth-child(1)
+        background-image: url('https://tgtresultados.com.br/wp-content/uploads/2024/06/TGT-Resultados-Palestra.jpeg')
+
+      &:nth-child(2)
+        background-image: url('https://tgtresultados.com.br/wp-content/uploads/2024/06/TGT-Resultados-Palestra.jpeg')
+
+      &:nth-child(3)
+        background-image: url('https://tgtresultados.com.br/wp-content/uploads/2024/06/TGT-Resultados-Palestra.jpeg')
+
+      &:nth-child(4)
+        background-image: url('https://tgtresultados.com.br/wp-content/uploads/2024/06/TGT-Resultados-Palestra.jpeg')
+      &:nth-child(5)
+        background-image: url('https://tgtresultados.com.br/wp-content/uploads/2024/06/TGT-Resultados-Palestra.jpeg')      
+
+      .item::before
+        content: ''
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        background: linear-gradient(to top, rgba(0, 0, 0, 1), transparent)
+        z-index: 1 // Certifica-se de que o gradiente esteja acima da imagem de fundo //
+      
+
+      .item h4
+        position: relative
+        z-index: 2 // Certifica-se de que o texto esteja acima do gradiente //
+        margin-top: 10px
+        font-size: 1.2em
+      
+
+      .item:hover
+        transform: scale(1.05) // Efeito de zoom ao passar o mouse //
+      

@@ -1,0 +1,95 @@
+@use '../utils/mixins' as *
+@use '../utils/variables' as *
+
+.footer
+    @include flexbox(center, center, column)
+    gap: 2rem
+    text-align: center
+    width: 100%
+    background: $primary
+    color: $text
+    font-size: $fs-sm
+    padding: 2rem
+    border-radius: 25px
+
+    .logo
+        @include flexbox(flex-start, center)
+        @include transition(0.3s)
+
+        &:hover
+            transform: scale(1.05)
+
+        &-img
+            max-width: 80px
+            cursor: pointer
+            @include transition(0.3s)
+
+            @include large-desktop
+                max-width: 80px
+
+    &-info
+        @include flexbox(center, center, column)
+        gap: 1.5rem
+
+        .footer-adress
+            @include flexbox(center, center)
+            gap: 1rem
+
+            @include tablet
+                @include flexbox(center, center, column)
+                gap: 0
+
+            p:last-child::before
+                content: '-'
+                margin-right: 1rem
+
+                @include tablet
+                    content: ''
+
+        .footer-contact
+            font-weight: 700
+
+            .smaller-text
+                font-size: 1rem
+                font-weight: 400
+
+
+        .footer-social
+            @include flexbox(center, center)
+            gap: 1rem
+            text-transform: uppercase
+
+            a
+                @include transition(0.3s)
+                padding: 0.5rem
+                border-radius: 50px
+
+                &:hover
+                    background: $secondary
+                    color: $primary
+                
+                &:nth-child(2)::before
+                    content: '|'
+                    margin-right: 1rem
+
+                &:nth-child(2)::after
+                    content: '|'
+                    margin-left: 1rem
+        
+        .footer-copyright
+            @include flexbox(center, center)
+            gap: 1.5rem
+
+            @include tablet
+                @include flexbox(center, center, column)
+                gap: 0
+
+            a
+                font-weight: 700
+                @include transition(0.3s)
+                padding: 0.5rem
+                border-radius: 50px
+
+            a:hover
+                background: $secondary
+                color: $primary
