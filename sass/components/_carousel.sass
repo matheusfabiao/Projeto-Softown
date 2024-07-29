@@ -29,12 +29,9 @@
   .owl-carousel
     .item
       position: relative
-      display: flex
-      flex-direction: column
-      align-items: center
-      justify-content: flex-end // Alinhar o texto na parte inferior //
+      @include mixins.flexbox(flex-end, center, column) // Alinhar o texto na parte inferior
       padding: 20px
-      min-height: 70vh // Altura mínima padrão //
+      min-height: 70vh // Altura mínima padrão
       background-size: cover
       background-position: center
       border-radius: 10px

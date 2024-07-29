@@ -1,0 +1,54 @@
+@use '../utils/mixins' as *
+@use '../utils/variables' as *
+@use '../utils/keyframes' as *
+
+.marquee
+    width: 100%
+    padding-bottom: 10%
+    margin-inline: auto
+    position: relative
+    height: 100px
+    margin-top: 5rem
+    overflow: hidden
+    mask-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 0))
+
+    .item
+        width: 200px
+        height: 100px
+        background-size: cover
+        background-position: center
+        background-repeat: no-repeat
+        border-radius: 6px
+        position: absolute
+        left: max(calc( 200px * 8 ), 100%)
+        animation-name: marquee-scroll
+        animation-duration: 30s
+        animation-timing-function: linear
+        animation-iteration-count: infinite
+        animation-delay: -15s
+        
+    // Duration / nº Items * (Delay - Item nº) * -1
+    .item1
+        animation-delay: calc( 30s / 8 * (8 - 1) * -1 )
+        background-image: url('https://tgtresultados.com.br/wp-content/uploads/2024/06/TSN.png')
+    .item2
+        animation-delay: calc( 30s / 8 * (8 - 2) * -1 )
+        background-image: url('https://tgtresultados.com.br/wp-content/uploads/2024/06/TSN.png')
+    .item3
+        animation-delay: calc( 30s / 8 * (8 - 3) * -1 )
+        background-image: url('https://tgtresultados.com.br/wp-content/uploads/2024/06/TSN.png')
+    .item4
+        animation-delay: calc( 30s / 8 * (8 - 4) * -1 )
+        background-image: url('https://tgtresultados.com.br/wp-content/uploads/2024/06/TSN.png')
+    .item5
+        animation-delay: calc( 30s / 8 * (8 - 5) * -1 )
+        background-image: url('https://tgtresultados.com.br/wp-content/uploads/2024/06/TSN.png')
+    .item6
+        animation-delay: calc( 30s / 8 * (8 - 6) * -1 )
+        background-image: url('https://tgtresultados.com.br/wp-content/uploads/2024/06/TSN.png')
+    .item7
+        animation-delay: calc( 30s / 8 * (8 - 7) * -1 )
+        background-image: url('https://tgtresultados.com.br/wp-content/uploads/2024/06/TSN.png')
+    .item8
+        animation-delay: calc( 30s / 8 * (8 - 8) * -1 )
+        background-image: url('https://tgtresultados.com.br/wp-content/uploads/2024/06/TSN.png')
