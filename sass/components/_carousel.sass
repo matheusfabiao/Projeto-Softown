@@ -1,72 +1,58 @@
-@use '../utils/mixins'
-@use '../utils/variables'
+@use '../utils/mixins' as *
+@use '../utils/variables' as *
 
 .carousel-section
   width: 100%
   border-radius: 25px
   min-height: calc( 100dvh - 60px )
-  @include mixins.flexbox(space-evenly, center, column)
-  background: variables.$primary
-  color: variables.$text
+  @include flexbox(space-evenly, center, column)
+  background: $primary
+  color: $text
   padding: 0 10px
 
   .carousel-header
     // padding: 10px
     width: 100%
-    @include mixins.flexbox(space-between, center)
-    @include mixins.transition(0.3s)
+    @include flexbox(space-between, center)
+    @include transition(0.3s)
 
-    @include mixins.desktop
-      @include mixins.flexbox(center, center, column)
+    @include desktop
+      @include flexbox(center, center, column)
 
     h2
-      @include mixins.font(Tusker Grotesk, variables.$fs-lg)
-      @include mixins.transition(0.3s)
+      @include font(Fields-Display Bold, $fs-lg, 700)
+      @include transition(0.3s)
 
-      @include mixins.large-desktop
-        font-size: variables.$fs-md
+      @include large-desktop
+        font-size: $fs-md
 
-      @include mixins.tablet
+      @include tablet
         text-align: center
 
       
 
     .action-btn
-      color: variables.$text
-      border-color: variables.$text
+      color: $text
+      border-color: $text
 
       &:hover
-        background: variables.$text
-        color: variables.$primary
+        background: $text
+        color: $primary
 
   .owl-carousel
     .item
       position: relative
-      @include mixins.flexbox(flex-end, center, column) // Alinhar o texto na parte inferior
+      @include flexbox(flex-end, center, column) // Alinhar o texto na parte inferior
       padding: 20px
       min-height: 70vh // Altura mínima padrão
       background-size: cover
       background-position: center
       border-radius: 10px
-      @include mixins.box-shadow(0 4px 8px rgba(0,0,0,0.1))
+      @include box-shadow(0 4px 8px rgba(0,0,0,0.1))
       text-align: center
       color: white
       overflow: hidden
-      transition: transform 0.3s ease-in-out
-
-      &:nth-child(1)
-        background-image: url('https://tgtresultados.com.br/wp-content/uploads/2024/06/TGT-Resultados-Palestra.jpeg')
-
-      &:nth-child(2)
-        background-image: url('https://tgtresultados.com.br/wp-content/uploads/2024/06/TGT-Resultados-Palestra.jpeg')
-
-      &:nth-child(3)
-        background-image: url('https://tgtresultados.com.br/wp-content/uploads/2024/06/TGT-Resultados-Palestra.jpeg')
-
-      &:nth-child(4)
-        background-image: url('https://tgtresultados.com.br/wp-content/uploads/2024/06/TGT-Resultados-Palestra.jpeg')
-      &:nth-child(5)
-        background-image: url('https://tgtresultados.com.br/wp-content/uploads/2024/06/TGT-Resultados-Palestra.jpeg')      
+      transition: transform 0.3s ease-in-out          
 
       &::before
         content: ''
@@ -75,7 +61,7 @@
         left: 0
         width: 100%
         height: 100%
-        background: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.1))
+        // background: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.1))
         z-index: 1 // Certifica-se de que o gradiente esteja acima da imagem de fundo //
       
 
@@ -83,13 +69,26 @@
         position: relative
         z-index: 2 // Certifica-se de que o texto esteja acima do gradiente //
         margin-top: 10px
-        font-size: 1.2em
-        @include mixins.transition(0.3s)
-        font-size: variables.$fs-md
+        @include transition(0.3s)
+        @include font(Fields-Display Black, $fs-md, 900)
 
         @media screen and ( max-width: 600px )
-          font-size: variables.$fs-xl    
+          font-size: $fs-xl    
 
       &:hover h4
         transform: translateY(-2.1rem) // Efeito de zoom ao passar o mouse //
       
+    .item1
+        background-image: url('/assets/img/TEDx-Guará.webp')
+
+    .item2
+      background-image: url('/assets/img/Poker Series.webp')
+
+    .item3
+      background-image: url('/assets/img/Sephora.webp')
+
+    .item4
+      background-image: url('/assets/img/The-Pitch-Pub.webp')
+      
+    .item5
+      background-image: url('/assets/img/Experiências.webp')

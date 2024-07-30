@@ -5,34 +5,36 @@
     padding-top: 90px
     .wrapper
         #hero
-            position: relative
+            // position: relative
             height: calc(100dvh - 90px)
             overflow: hidden
             @include mixins.border-radius(25px)
             @include mixins.transition(0.3s)
+            background: url('/assets/img/hero-banner.webp') top center no-repeat
+            background-size: cover
 
             @include mixins.notebook
                 height: calc(100dvh - 122px)
 
-            #hero-video
-                position: absolute
-                top: 0
-                left: 0
-                width: 100%
-                height: 100%
-                object-fit: cover
-                @include mixins.border-radius(25px)
-                filter: brightness(50%)
+            // #hero-video
+            //     position: absolute
+            //     top: 0
+            //     left: 0
+            //     width: 100%
+            //     height: 100%
+            //     object-fit: cover
+            //     @include mixins.border-radius(25px)
+            //     filter: brightness(50%)
 
             .hero-content
-                position: relative
-                z-index: 1
+                // position: relative
+                // z-index: 1
                 @include mixins.flexbox(center, center, column)
                 height: 100%
-                color: variables.$text
+                color: variables.$hero-text
                 text-align: center
                 padding: 1.5rem
-                @include mixins.text-shadow(2px 2px 4px rgba(0, 0, 0, 0.5))
+                @include mixins.text-shadow(2px 2px 4px variables.$hero-text-shadow)
 
                 #hero-logo
                     min-height: 100px
@@ -40,11 +42,11 @@
                     filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5))
 
                 h1
-                    @include mixins.font(Tusker Grotesk, variables.$fs-lg, bold)
+                    @include mixins.font(Fields-Display Bold, variables.$fs-lg, bold)
                     margin-bottom: 1rem
 
                 p
-                    @include mixins.font(Bai Jamjuree Regular, variables.$fs-sm)
+                    @include mixins.font(Montserrat-Regular, variables.$fs-sm)
                     margin-bottom: 2rem
                     max-width: 900px
 
@@ -64,22 +66,22 @@
         .cards-section
             .card
                 &.card-1
-                     background-image: url('/assets/img/image1.jpg')
+                     background-image: url('/assets/img/auditorio.webp')
 
                 &.card-2
-                    background-image: url('/assets/img/image2.jpg')
+                    background-image: url('/assets/img/salas.webp')
 
                 &.card-3
-                    background-image: url('/assets/img/image3.jpg')
+                    background-image: url('/assets/img/Experiências.webp')
 
                 &.card-4
-                    background-image: url('/assets/img/image1.jpg')
+                    background-image: url('/assets/img/podcast.webp')
 
                 &.card-5
-                    background-image: url('/assets/img/image2.jpg')
+                    background-image: url('/assets/img/The-Pitch-Pub.webp')
 
                 &.card-6
-                    background-image: url('/assets/img/image3.jpg')
+                    background-image: url('/assets/img/Estúdio Fotográfico.webp')
 
 
         .breathing-area
@@ -87,16 +89,16 @@
             padding: 0 1rem
             margin: 10% auto
             text-align: center
-            @include mixins.font(Bai Jamjuree Regular, variables.$fs-sm)
+            @include mixins.font(Montserrat-Regular, variables.$fs-sm, 400)
 
             h2
-                @include mixins.font(Tusker Grotesk, variables.$fs-lg, 700)
+                @include mixins.font(Fields-Display Bold, variables.$fs-xl, 700)
 
             .action-btn
                 color: variables.$secondary
                 background: variables.$primary
                 border: 1px solid variables.$primary
-                width: clamp(18.75rem, 15vw, 25rem)
+                width: clamp(20rem, 15vw, 30rem)
                 margin: 0 auto
                 margin-top: 2rem
                 font-size: variables.$fs-sm
@@ -111,7 +113,7 @@
             width: 100%
 
             h2
-                @include mixins.font(Tusker Grotesk, variables.$fs-lg, 700)
+                @include mixins.font(Fields-Display Bold, variables.$fs-lg, 700)
                 text-align: center
 
         .blog
@@ -136,7 +138,7 @@
                         
 
                 h2
-                    @include mixins.font(Tusker Grotesk, variables.$fs-lg, 700)
+                    @include mixins.font(Fields-Display Bold, variables.$fs-lg, 700)
                     text-align: center
 
                     @include mixins.notebook
@@ -154,11 +156,24 @@
                     width: calc(50% - 0.67rem)
                     height: 60vh
 
+                    &.card-1
+                        background-image: url('/assets/img/topdecor.webp')
+
+                    &.card-2
+                        background-image: url('/assets/img/imersão.webp')
+
                     &-content
                         text-align: left
                         position: absolute
                         bottom: 1.5rem
                         left: 1.5rem
+
+                        h2
+                            @include mixins.font(Fields-Display Bold, variables.$fs-xl, 700)
+
+                        p
+                            @include mixins.font(Montserrat-Regular, variables.$fs-sm, 400)
+                            margin-bottom: 1rem
 
                 @include mixins.notebook
                     flex-direction: column

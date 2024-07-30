@@ -1,18 +1,27 @@
+@charset "UTF-8";
 @font-face {
-  font-family: Tusker Grotesk;
-  src: url("/assets/font/TuskerGrotesk-8700Bold.ttf");
+  font-family: Fields-Display Black;
+  src: url("assets/font/fontspring-demo-fieldsdisplay-black.otf");
 }
 @font-face {
-  font-family: Bai Jamjuree Regular;
-  src: url("/assets/font/BaiJamjuree-Regular.ttf");
+  font-family: Fields-Display Bold;
+  src: url("/assets/font/fontspring-demo-fieldsdisplay-bold.otf");
 }
 @font-face {
-  font-family: Bai Jamjuree Medium;
-  src: url("/assets/font/BaiJamjuree-Medium.ttf");
+  font-family: Fields-Display Medium;
+  src: url("/assets/font/fontspring-demo-fieldsdisplay-medium.otf");
 }
 @font-face {
-  font-family: Bai Jamjuree Bold;
-  src: url("/assets/font/BaiJamjuree-Bold.ttf");
+  font-family: Fields-Display Regular;
+  src: url("/assets/font/fontspring-demo-fieldsdisplay-regular.otf");
+}
+@font-face {
+  font-family: Montserrat-Bold;
+  src: url("/assets/font/Montserrat-Bold.ttf");
+}
+@font-face {
+  font-family: Montserrat-Regular;
+  src: url("/assets/font/Montserrat-Regular.ttf");
 }
 * {
   padding: 0;
@@ -28,7 +37,7 @@ html {
 
 body {
   margin: 0;
-  font-family: Bai Jamjuree Regular;
+  font-family: Montserrat-Regular;
   min-height: 100dvh;
   background: #FDFDFD;
 }
@@ -227,9 +236,9 @@ a {
   gap: 0.5rem;
 }
 #header #navbar .logo-name {
-  font-family: Bai Jamjuree Bold;
+  font-family: Fields-Display Bold;
   font-size: 3rem;
-  font-weight: normal;
+  font-weight: 700;
   font-style: normal;
   color: #1E201C;
   cursor: pointer;
@@ -284,7 +293,7 @@ a {
   }
 }
 #header #navbar #links .nav-item {
-  font-family: Bai Jamjuree Medium;
+  font-family: Fields-Display Regular;
   font-size: 1.5rem;
   font-weight: 500;
   font-style: normal;
@@ -579,7 +588,7 @@ a {
   filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.5));
 }
 .cards-section .card .card-content h2 {
-  font-family: Bai Jamjuree Bold;
+  font-family: Fields-Display Bold;
   font-size: 2em;
   font-weight: normal;
   font-style: normal;
@@ -599,6 +608,7 @@ a {
   border: 1px solid #FDFDFD;
   text-transform: uppercase;
   font-weight: 700;
+  max-width: 150px;
 }
 .cards-section .card .card-content .action-btn:hover {
   background: #1E201C;
@@ -652,9 +662,9 @@ a {
   }
 }
 .carousel-section .carousel-header h2 {
-  font-family: Tusker Grotesk;
+  font-family: Fields-Display Bold;
   font-size: clamp(1.25rem, 6vw, 3rem);
-  font-weight: normal;
+  font-weight: 700;
   font-style: normal;
   -webkit-transition: 0.3s;
   -moz-transition: 0.3s;
@@ -701,21 +711,6 @@ a {
   overflow: hidden;
   transition: transform 0.3s ease-in-out;
 }
-.carousel-section .owl-carousel .item:nth-child(1) {
-  background-image: url("https://tgtresultados.com.br/wp-content/uploads/2024/06/TGT-Resultados-Palestra.jpeg");
-}
-.carousel-section .owl-carousel .item:nth-child(2) {
-  background-image: url("https://tgtresultados.com.br/wp-content/uploads/2024/06/TGT-Resultados-Palestra.jpeg");
-}
-.carousel-section .owl-carousel .item:nth-child(3) {
-  background-image: url("https://tgtresultados.com.br/wp-content/uploads/2024/06/TGT-Resultados-Palestra.jpeg");
-}
-.carousel-section .owl-carousel .item:nth-child(4) {
-  background-image: url("https://tgtresultados.com.br/wp-content/uploads/2024/06/TGT-Resultados-Palestra.jpeg");
-}
-.carousel-section .owl-carousel .item:nth-child(5) {
-  background-image: url("https://tgtresultados.com.br/wp-content/uploads/2024/06/TGT-Resultados-Palestra.jpeg");
-}
 .carousel-section .owl-carousel .item::before {
   content: "";
   position: absolute;
@@ -723,20 +718,21 @@ a {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to top, rgb(0, 0, 0), rgba(0, 0, 0, 0.1));
   z-index: 1;
 }
 .carousel-section .owl-carousel .item h4 {
   position: relative;
   z-index: 2;
   margin-top: 10px;
-  font-size: 1.2em;
   -webkit-transition: 0.3s;
   -moz-transition: 0.3s;
   -ms-transition: 0.3s;
   -o-transition: 0.3s;
   transition: 0.3s;
+  font-family: Fields-Display Black;
   font-size: clamp(1rem, 4vw, 2rem);
+  font-weight: 900;
+  font-style: normal;
 }
 @media screen and (max-width: 600px) {
   .carousel-section .owl-carousel .item h4 {
@@ -745,6 +741,21 @@ a {
 }
 .carousel-section .owl-carousel .item:hover h4 {
   transform: translateY(-2.1rem);
+}
+.carousel-section .owl-carousel .item1 {
+  background-image: url("/assets/img/TEDx-Guará.webp");
+}
+.carousel-section .owl-carousel .item2 {
+  background-image: url("/assets/img/Poker Series.webp");
+}
+.carousel-section .owl-carousel .item3 {
+  background-image: url("/assets/img/Sephora.webp");
+}
+.carousel-section .owl-carousel .item4 {
+  background-image: url("/assets/img/The-Pitch-Pub.webp");
+}
+.carousel-section .owl-carousel .item5 {
+  background-image: url("/assets/img/Experiências.webp");
 }
 
 .marquee {
@@ -760,7 +771,7 @@ a {
 .marquee .item {
   width: 200px;
   height: 100px;
-  background-size: cover;
+  background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
   border-radius: 6px;
@@ -773,43 +784,30 @@ a {
   animation-delay: -15s;
 }
 .marquee .item1 {
-  animation-delay: -26.25s;
-  background-image: url("https://tgtresultados.com.br/wp-content/uploads/2024/06/TSN.png");
+  animation-delay: -42s;
+  background-image: url("/assets/img/Brasal Logo.webp");
 }
 .marquee .item2 {
-  animation-delay: -22.5s;
-  background-image: url("https://tgtresultados.com.br/wp-content/uploads/2024/06/TSN.png");
+  animation-delay: -36s;
+  background-image: url("/assets/img/Erico Rocha Logo.webp");
 }
 .marquee .item3 {
-  animation-delay: -18.75s;
-  background-image: url("https://tgtresultados.com.br/wp-content/uploads/2024/06/TSN.png");
+  animation-delay: -30s;
+  background-image: url("/assets/img/Zara Logo.webp");
 }
 .marquee .item4 {
-  animation-delay: -15s;
-  background-image: url("https://tgtresultados.com.br/wp-content/uploads/2024/06/TSN.png");
+  animation-delay: -24s;
+  background-image: url("/assets/img/Xp Investimentos Logo.webp");
 }
 .marquee .item5 {
-  animation-delay: -11.25s;
-  background-image: url("https://tgtresultados.com.br/wp-content/uploads/2024/06/TSN.png");
-}
-.marquee .item6 {
-  animation-delay: -7.5s;
-  background-image: url("https://tgtresultados.com.br/wp-content/uploads/2024/06/TSN.png");
-}
-.marquee .item7 {
-  animation-delay: -3.75s;
-  background-image: url("https://tgtresultados.com.br/wp-content/uploads/2024/06/TSN.png");
-}
-.marquee .item8 {
-  animation-delay: 0s;
-  background-image: url("https://tgtresultados.com.br/wp-content/uploads/2024/06/TSN.png");
+  animation-delay: -18s;
+  background-image: url("/assets/img/Top Decor Logo.webp");
 }
 
 #main {
   padding-top: 90px;
 }
 #main .wrapper #hero {
-  position: relative;
   height: calc(100dvh - 90px);
   overflow: hidden;
   -webkit-border-radius: 25px;
@@ -822,42 +820,28 @@ a {
   -ms-transition: 0.3s;
   -o-transition: 0.3s;
   transition: 0.3s;
+  background: url("/assets/img/hero-banner.webp") top center no-repeat;
+  background-size: cover;
 }
 @media (max-width: 992px) {
   #main .wrapper #hero {
     height: calc(100dvh - 122px);
   }
 }
-#main .wrapper #hero #hero-video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  -webkit-border-radius: 25px;
-  -moz-border-radius: 25px;
-  -ms-border-radius: 25px;
-  -o-border-radius: 25px;
-  border-radius: 25px;
-  filter: brightness(50%);
-}
 #main .wrapper #hero .hero-content {
-  position: relative;
-  z-index: 1;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   height: 100%;
-  color: #FDFDFD;
+  color: #e59f39;
   text-align: center;
   padding: 1.5rem;
-  -webkit-text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  -moz-text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  -ms-text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  -o-text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  -webkit-text-shadow: 2px 2px 4px #912b13;
+  -moz-text-shadow: 2px 2px 4px #912b13;
+  -ms-text-shadow: 2px 2px 4px #912b13;
+  -o-text-shadow: 2px 2px 4px #912b13;
+  text-shadow: 2px 2px 4px #912b13;
 }
 #main .wrapper #hero .hero-content #hero-logo {
   min-height: 100px;
@@ -865,14 +849,14 @@ a {
   filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
 }
 #main .wrapper #hero .hero-content h1 {
-  font-family: Tusker Grotesk;
+  font-family: Fields-Display Bold;
   font-size: clamp(1.25rem, 6vw, 3rem);
   font-weight: bold;
   font-style: normal;
   margin-bottom: 1rem;
 }
 #main .wrapper #hero .hero-content p {
-  font-family: Bai Jamjuree Regular;
+  font-family: Montserrat-Regular;
   font-size: clamp(0.875rem, 2vw, 1.5rem);
   font-weight: normal;
   font-style: normal;
@@ -905,36 +889,36 @@ a {
   background: #d7d7d7;
 }
 #main .wrapper .cards-section .card.card-1 {
-  background-image: url("/assets/img/image1.jpg");
+  background-image: url("/assets/img/auditorio.webp");
 }
 #main .wrapper .cards-section .card.card-2 {
-  background-image: url("/assets/img/image2.jpg");
+  background-image: url("/assets/img/salas.webp");
 }
 #main .wrapper .cards-section .card.card-3 {
-  background-image: url("/assets/img/image3.jpg");
+  background-image: url("/assets/img/Experiências.webp");
 }
 #main .wrapper .cards-section .card.card-4 {
-  background-image: url("/assets/img/image1.jpg");
+  background-image: url("/assets/img/podcast.webp");
 }
 #main .wrapper .cards-section .card.card-5 {
-  background-image: url("/assets/img/image2.jpg");
+  background-image: url("/assets/img/The-Pitch-Pub.webp");
 }
 #main .wrapper .cards-section .card.card-6 {
-  background-image: url("/assets/img/image3.jpg");
+  background-image: url("/assets/img/Estúdio Fotográfico.webp");
 }
 #main .wrapper .breathing-area {
   max-width: 1024px;
   padding: 0 1rem;
   margin: 10% auto;
   text-align: center;
-  font-family: Bai Jamjuree Regular;
+  font-family: Montserrat-Regular;
   font-size: clamp(0.875rem, 2vw, 1.5rem);
-  font-weight: normal;
+  font-weight: 400;
   font-style: normal;
 }
 #main .wrapper .breathing-area h2 {
-  font-family: Tusker Grotesk;
-  font-size: clamp(1.25rem, 6vw, 3rem);
+  font-family: Fields-Display Bold;
+  font-size: clamp(1.5rem, 8vw, 3.5rem);
   font-weight: 700;
   font-style: normal;
 }
@@ -942,7 +926,7 @@ a {
   color: #FDFDFD;
   background: #1E201C;
   border: 1px solid #1E201C;
-  width: clamp(18.75rem, 15vw, 25rem);
+  width: clamp(20rem, 15vw, 30rem);
   margin: 0 auto;
   margin-top: 2rem;
   font-size: clamp(0.875rem, 2vw, 1.5rem);
@@ -957,7 +941,7 @@ a {
   width: 100%;
 }
 #main .wrapper .partners h2 {
-  font-family: Tusker Grotesk;
+  font-family: Fields-Display Bold;
   font-size: clamp(1.25rem, 6vw, 3rem);
   font-weight: 700;
   font-style: normal;
@@ -993,7 +977,7 @@ a {
   }
 }
 #main .wrapper .blog-header h2 {
-  font-family: Tusker Grotesk;
+  font-family: Fields-Display Bold;
   font-size: clamp(1.25rem, 6vw, 3rem);
   font-weight: 700;
   font-style: normal;
@@ -1017,11 +1001,30 @@ a {
   width: calc(50% - 0.67rem);
   height: 60vh;
 }
+#main .wrapper .blog .cards-section .card.card-1 {
+  background-image: url("/assets/img/topdecor.webp");
+}
+#main .wrapper .blog .cards-section .card.card-2 {
+  background-image: url("/assets/img/imersão.webp");
+}
 #main .wrapper .blog .cards-section .card-content {
   text-align: left;
   position: absolute;
   bottom: 1.5rem;
   left: 1.5rem;
+}
+#main .wrapper .blog .cards-section .card-content h2 {
+  font-family: Fields-Display Bold;
+  font-size: clamp(1.5rem, 8vw, 3.5rem);
+  font-weight: 700;
+  font-style: normal;
+}
+#main .wrapper .blog .cards-section .card-content p {
+  font-family: Montserrat-Regular;
+  font-size: clamp(0.875rem, 2vw, 1.5rem);
+  font-weight: 400;
+  font-style: normal;
+  margin-bottom: 1rem;
 }
 @media (max-width: 992px) {
   #main .wrapper .blog .cards-section {
