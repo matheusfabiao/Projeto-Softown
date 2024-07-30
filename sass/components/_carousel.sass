@@ -14,9 +14,22 @@
     // padding: 10px
     width: 100%
     @include mixins.flexbox(space-between, center)
+    @include mixins.transition(0.3s)
+
+    @include mixins.desktop
+      @include mixins.flexbox(center, center, column)
 
     h2
       @include mixins.font(Tusker Grotesk, variables.$fs-lg)
+      @include mixins.transition(0.3s)
+
+      @include mixins.large-desktop
+        font-size: variables.$fs-md
+
+      @include mixins.tablet
+        text-align: center
+
+      
 
     .action-btn
       color: variables.$text

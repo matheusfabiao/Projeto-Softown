@@ -637,12 +637,40 @@ a {
   justify-content: space-between;
   align-items: center;
   flex-direction: row;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+@media (max-width: 1024px) {
+  .carousel-section .carousel-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
 }
 .carousel-section .carousel-header h2 {
   font-family: Tusker Grotesk;
   font-size: clamp(1.25rem, 6vw, 3rem);
   font-weight: normal;
   font-style: normal;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+@media (max-width: 1200px) {
+  .carousel-section .carousel-header h2 {
+    font-size: clamp(1rem, 4vw, 2rem);
+  }
+}
+@media (max-width: 768px) {
+  .carousel-section .carousel-header h2 {
+    text-align: center;
+  }
 }
 .carousel-section .carousel-header .action-btn {
   color: #FDFDFD;
@@ -909,6 +937,21 @@ a {
   font-size: clamp(1.25rem, 6vw, 3rem);
   font-weight: 700;
   font-style: normal;
+}
+#main .wrapper .breathing-area .action-btn {
+  color: #FDFDFD;
+  background: #1E201C;
+  border: 1px solid #1E201C;
+  width: clamp(18.75rem, 15vw, 25rem);
+  margin: 0 auto;
+  margin-top: 2rem;
+  font-size: clamp(0.875rem, 2vw, 1.5rem);
+  text-transform: uppercase;
+  text-align: center;
+}
+#main .wrapper .breathing-area .action-btn:hover {
+  background: #FDFDFD;
+  color: #1E201C;
 }
 #main .wrapper .partners {
   width: 100%;

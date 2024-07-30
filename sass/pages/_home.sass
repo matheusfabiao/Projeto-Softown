@@ -92,6 +92,21 @@
             h2
                 @include mixins.font(Tusker Grotesk, variables.$fs-lg, 700)
 
+            .action-btn
+                color: variables.$secondary
+                background: variables.$primary
+                border: 1px solid variables.$primary
+                width: clamp(18.75rem, 15vw, 25rem)
+                margin: 0 auto
+                margin-top: 2rem
+                font-size: variables.$fs-sm
+                text-transform: uppercase
+                text-align: center
+
+                &:hover
+                    background: variables.$secondary
+                    color: variables.$primary
+
         .partners
             width: 100%
 
